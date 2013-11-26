@@ -62,6 +62,6 @@
     "particles-passport": "~0.1.0"
   },
   "scripts": {
-    "test": "node_modules/mocha/bin/_mocha test/server/*.js --reporter spec"
+    "test": "node_modules/mocha/bin/_mocha test/server/*.js -t 6000 --reporter spec"
   }
 }
