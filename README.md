@@ -10,7 +10,6 @@ The core is built reusing well-known and (mostly) loved javascript frameworks an
 
 [![Build Status](https://travis-ci.org/hadronjs/hadron.png)](https://travis-ci.org/hadronjs/hadron)
 
-
 #### Tech Features
 
 * Built in Javascript on **Node.js** with the aid of the [Scatter](https://github.com/mariocasciaro/scatter) IoC container and the [Particles](https://github.com/particles) platform.
@@ -29,6 +28,9 @@ The core is built reusing well-known and (mostly) loved javascript frameworks an
 Hadron is currently in **experimental** stage, things may change rapidly and although reasonable efforts will be made to not break compatibility, no easy migration might be provided between releases at this very early stage.
 
 That said, early adopters/testers are more than welcome :).
+# Screenshots
+
+![Hadron homepage](https://raw.github.com/hadronjs/hadron/master/img/screenshot1.jpg)
 
 # Quick install
 
