@@ -116,3 +116,7 @@ Hadron itself is an npm packaged Scatter module (a particle), and is installed a
 ## Feedback & Social
 
 Any feedback is welcome. If you just like/dislike Hadron, if you tried it, if are using it for your blog/website, please let us know with a tweet mentioning [@hadronjs](https://twitter.com/hadronjs).
+
+---
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/hadronjs/hadron/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
