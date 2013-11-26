@@ -32,10 +32,10 @@ That said, early adopters/testers are more than welcome :).
 
 # Quick install
 
-* Choose a name for you blog, for this example we will call it `myblog`. Replace it with your name in the commands that will follow.
+* Choose a name for you blog, for this example we will call it `MYBLOG`. Replace it with your name in the commands that will follow.
 * Create a directory for your blog
 ```
-$ mkdir myblog
+$ mkdir MYBLOG
 ```
 * Download and extract the `hadron-seed` project
 ```
@@ -43,11 +43,11 @@ $ wget https://github.com/hadronjs/hadron-seed/archive/master.tar.gz -O hadron-s
 ```
 * Extract it into your blog directory
 ```
-$ tar -xzvf hadron-seed.tar.gz hadron-seed-master --strip-components=1 -C ./myblog
+$ tar -xzvf hadron-seed.tar.gz hadron-seed-master -C MYBLOG --strip-components=1 
 ```
 * Install the dependencies, build and install the application
 ```
-$ cd myblog
+$ cd MYBLOG
 $ npm install
 $ grunt install
 $ grunt build
