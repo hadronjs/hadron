@@ -9,7 +9,7 @@ block main
     each post in posts
       article
         h2
-          a(href="#{post.friendlyUrl}")= post.title
+          a(href="/#{post.friendlyUrl}")= post.title
         .summary= post.lead
         div.subheading
           div.timedate 

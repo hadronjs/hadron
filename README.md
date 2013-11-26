@@ -39,7 +39,7 @@ That said, early adopters/testers are more than welcome :).
 ```
 $ mkdir MYBLOG
 ```
-* Download and extract the `hadron-seed` project
+* Download and extract the [hadron-seed](https://github.com/hadronjs/hadron-seed) project
 ```
 $ wget https://github.com/hadronjs/hadron-seed/archive/master.tar.gz -O hadron-seed.tar.gz
 ```
