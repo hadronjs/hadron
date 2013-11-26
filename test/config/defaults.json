@@ -1,0 +1,14 @@
+{
+  "dataDir": "${appRoot}/tmp",
+  "generatedDir": "${appRoot}/tmp/generated",
+  "assets": {
+    "assetsDir": "${generatedDir}/assets",
+    "viewsDir": "${generatedDir}/views",
+    "publicUrlRoot": "/public"
+  },
+  "particles": {
+    "app": {
+      "particles": ["${appRoot}/app", "${appRoot}/install"]
+    }
+  }
+}

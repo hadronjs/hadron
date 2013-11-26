@@ -1,0 +1,20 @@
+table.table.post-list
+  thead
+    tr 
+      th Title
+      th Created Date
+      th 
+      th
+  tbody
+    tr(ng-repeat="post in posts")
+      td
+        a(ng-href="{{post.friendlyUrl}}") {{post.title}}
+      td {{post.createdDate|date:'fullDate'}}
+      td(ng-switch="post.isPublished")
+        span.fa.fa-cloud(ng-switch-when="true", tooltip="Published")
+        span.fa.fa-archive(ng-switch-default, tooltip="Unpublished")
+      td.actions
+        a.btn.btn-primary.btn(href="#/posts/edit/{{post.id}}", title="Edit")
+          span.glyphicon.glyphicon-pencil
+        a.btn.btn-danger.btn(type="button", confirmed-click="delete($index)", title="Delete")
+          span.glyphicon.glyphicon-remove-circle

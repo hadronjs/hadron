@@ -1,0 +1,17 @@
+extends _layout
+
+block head
+  title #{settings.website.title} - Home
+  meta(name='description', content='#{settings.website.headline}')
+
+block main
+  .article-list
+    each post in posts
+      article
+        h2
+          a(href="#{post.friendlyUrl}")= post.title
+        .summary= post.lead
+        div.subheading
+          div.timedate 
+            span.fa.fa-clock-o
+            |  #{post.createdDate.toLocaleDateString()}

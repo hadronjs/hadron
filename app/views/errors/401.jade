@@ -1,0 +1,6 @@
+extends ../_layout
+block head
+  Title #{settings.website.title} - 401 Not authorized
+block main
+  div Not Authorized, please 
+    a(href="/auth/login?redirect=/admin") login again

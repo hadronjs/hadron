@@ -1,0 +1,9 @@
+{
+  "name": "hadron",
+  "overrides": [
+    "particles-express"
+  ],
+  "exclude": [
+    "assets/**", "data/**, views/**"
+  ]
+}

@@ -1,0 +1,81 @@
+!!! 5
+head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  block head
+
+  // INJECT-CSS-START[default]
+  // INJECT-CSS-END[default]
+
+  // INJECT-SCRIPTS-START[default]
+  // INJECT-SCRIPTS-END[default]
+body
+  #wrapper
+    #sidebar-wrapper.sidebar-wrapper
+      .sidebar-content
+      .sidebar-brand
+        .sidebar-brand-img
+          img(src="/public/img/brand_logo.png")
+        .sidebar-brand-title
+          a(href="/")= settings.website.title
+        .sidebar-brand-headline!= settings.website.headline
+      ul.sidebar-nav
+        li
+          a(href="/")
+            span.glyphicon.glyphicon-home
+            | Blog
+        if auth.user
+          li
+            a(href="/admin")
+              span.glyphicon.glyphicon-cog
+              | Admin
+          li
+            a(href="/auth/logout")
+              span.glyphicon.glyphicon-log-out
+              | Logout
+      .sidebar-social
+        if settings.social.twitter
+          div(style="text-align: center")
+            a.twitter-follow-button(href="https://twitter.com/#{settings.social.twitter}", data-show-count="false",data-lang="en", data-show-count="true")
+              | Follow @#{settings.social.twitter}
+        if settings.social.twitter
+          a.fa.fa-twitter(href="https://twitter.com/#{settings.social.twitter}", target="_blank")
+        if settings.social.linkedin
+          a.fa.fa-linkedin(href="https://www.linkedin.com/in/#{settings.social.linkedin}", target="_blank")
+        if settings.social.github
+          a.fa.fa-github(href="https://github.com/#{settings.social.github}", target="_blank")
+      .poweredby
+        | Proudly powered by 
+        a(href="https://github.com/hadronjs/hadron", target="_blank") Hadron
+    #page-content-wrapper
+      .content-header.visible-xs.visible-sm
+        a.btn.btn-default#menu-toggle(type="button",href="#")
+          span.glyphicon.glyphicon-th-list
+        h1.title
+          = settings.website.title
+      .page-content
+        block main
+  
+  block footer
+  
+  // VIEW-CONTRIBUTION-START[main-layout-body-footer]
+  // VIEW-CONTRIBUTION-END[main-layout-body-footer]
+  
+  script.
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+  
+  if(settings.social.twitter)
+    script.
+      //Twitter button
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+      if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  
+      //Twitter share button
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+      if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+      fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    

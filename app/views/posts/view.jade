@@ -1,0 +1,26 @@
+extends ../_layout
+
+block head
+  title #{settings.website.title} - #{post.title}
+  meta(name='description', content='#{post.lead}')
+
+block main
+  article
+    h1
+      a(href="#{post.friendlyUrl}")= post.title
+    .subheading
+      span.timedate
+        span.fa.fa-clock-o
+        |  #{post.createdDate.toLocaleDateString()}
+      span.share-buttons
+        if settings.social.twitter
+          span
+            a(href="https://twitter.com/share" class="twitter-share-button" data-via="#{settings.social.twitter}") Share
+    .lead= post.lead
+    .article-content!= post.getRenderedContent()
+  // VIEW-CONTRIBUTION-START[post-view-article-footer]
+  // VIEW-CONTRIBUTION-END[post-view-article-footer]
+
+block footer
+  // VIEW-CONTRIBUTION-START[post-view-footer]
+  // VIEW-CONTRIBUTION-END[post-view-footer]

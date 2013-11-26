@@ -1,0 +1,57 @@
+!!! 5
+html(ng-app="hadronAdmin")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title(ng-bind="$state.current.title + ' - Hadron Admin'")
+    
+    // INJECT-CSS-START[default]
+    // INJECT-CSS-END[default]
+
+    // INJECT-CSS-START[admin]
+    // INJECT-CSS-END[admin]
+
+    // INJECT-SCRIPTS-START[admin]
+    // INJECT-SCRIPTS-END[admin]
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation', ng-controller="NavbarCtrl")
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', ng-click="toggleCollapsed()")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/')
+            img(src="/public/img/hadron_logo.png")
+            | Hadron
+        // Collect the nav links, forms, and other content for toggling
+        .navbar-collapse(collapse="isCollapsed()", style="height: 1px")
+          ul.nav.navbar-nav
+            li
+              a(href='#/posts/list')
+                span.glyphicon.glyphicon-list
+                |  Posts
+            li
+              a(href='#/posts/create')
+                span.fa.fa-plus
+                |  Create post
+            li &nbsp;
+            li
+              a(href='#/settings/edit')
+                span.glyphicon.glyphicon-wrench
+                |  Settings
+            li &nbsp;
+            li
+              a(href="/auth/logout")
+                span.glyphicon.glyphicon-log-out
+                |  Logout
+    .container
+      .row
+        .col-lg-12(ui-view)
+      .row
+        .poweredby
+          | Proudly powered by 
+          a(href="https://github.com/hadronjs/hadron", target="_blank") Hadron

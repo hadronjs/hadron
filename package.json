@@ -1,0 +1,67 @@
+{
+  "name": "hadron",
+  "description": "Minimalistic blogging/publishing platform for Node.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/hadronjs/hadron",
+  "author": {
+    "name": "Mario Casciaro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hadronjs/hadron"
+  },
+  "bugs": {
+    "url": "https://github.com/hadronjs/hadron/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/hadronjs/hadron/blob/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "lodash": "~2.2.0",
+    "marked": "~0.2.9",
+    "underscore.string": "~2.3.3",
+    "object-path": "~0.1.1",
+    "highlight.js": "~7.4.0",
+    "mkdirp": "~0.3.5",
+    "connect-leveldb": "~0.1.4",
+    "through": "~2.3.4",
+    "endpoint": "~0.4.2",
+    "levelup": "~0.18.2",
+    "leveldown": "~0.10.1",
+    "level-sublevel": "~5.1.1",
+    "level-indico": "~0.3.1",
+    "node-uuid": "~1.4.1",
+    "minimodel": "~0.1.3"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.0",
+    "chai": "~1.7.2",
+    "grunt-cli": "~0.1.11",
+    "rimraf": "~2.2.2",
+    "supertest": "~0.8.1",
+    "spawned": "~0.1.0",
+    "hadron-grunt-helper": "~0.1.0",
+    "particles": "~0.1.3",
+    "particles-express": "~0.1.1",
+    "grunt-particles-assetmanager": "~0.1.0",
+    "particles-bootstrap": "~0.1.0",
+    "particles-angular": "~0.1.0",
+    "particles-jquery": "~0.1.0",
+    "particles-passport": "~0.1.0"
+  },
+  "peerDependencies": {
+    "particles": "~0.1.3",
+    "particles-express": "~0.1.1",
+    "grunt-particles-assetmanager": "~0.1.0",
+    "particles-bootstrap": "~0.1.0",
+    "particles-angular": "~0.1.0",
+    "particles-jquery": "~0.1.0",
+    "particles-passport": "~0.1.0"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/_mocha test/server/*.js --reporter spec"
+  }
+}
