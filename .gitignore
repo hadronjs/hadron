@@ -4,5 +4,5 @@ node_modules
 .idea
 npm-debug.log
 generated
-data
+/data
 tmp

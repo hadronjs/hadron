@@ -52,6 +52,7 @@ $ npm install
 $ grunt install
 $ grunt build
 ```
+
 * Fire it up
 ```
 $ node app
