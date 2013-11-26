@@ -43,7 +43,7 @@ $ wget https://github.com/hadronjs/hadron-seed/archive/master.tar.gz -O hadron-s
 ```
 * Extract it into your blog directory
 ```
-$ tar -xzvf hadron-seed.tar.gz hadron-seed-master -C MYBLOG --strip-components=1 
+$ tar -xzvf hadron-seed.tar.gz -C MYBLOG hadron-seed-master --strip-components=1 
 ```
 * Install the dependencies, build and install the application
 ```
