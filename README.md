@@ -6,8 +6,6 @@ Hadron gives you the foundation to build **your very own** blog, thanks to its c
 
 The core is built reusing well-known and (mostly) loved javascript frameworks and libraries (Express, Grunt, LevelDB, etc.) with a sprinkle of [Scatter](https://github.com/mariocasciaro/scatter) IoC to give the application **composability** from the ground up.
 
-[![NPM](https://nodei.co/npm-dl/hadron.png?months=1)](https://nodei.co/npm/hadron/)
-
 [![Build Status](https://travis-ci.org/hadronjs/hadron.png)](https://travis-ci.org/hadronjs/hadron)
 
 #### Tech Features
@@ -78,6 +76,7 @@ $ node app
 $ rm -rf node_modules
 $ npm install --production
 ```
+
 * If you use a PaaS, or a continuous integration/deployment, do not forget to checkin your `node_modules` dir, and to run
 ```
 $ npm rebuild
@@ -91,10 +90,11 @@ $ NODE_ENV=production node app.js
 # Update
 
 Thanks to Scatter/Particles, it should be as easy as:
-
-* `npm update`
-* `grunt install
-* `grunt build`
+```
+$ npm update
+$ grunt install
+$ grunt build
+```
 
 
 # The Philosophy
