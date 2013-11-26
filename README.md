@@ -32,6 +32,8 @@ That said, early adopters/testers are more than welcome :).
 
 ![Hadron homepage](https://raw.github.com/hadronjs/hadron/master/img/screenshot1.jpg)
 
+![Hadron admin](https://raw.github.com/hadronjs/hadron/master/img/screenshot2.jpg)
+
 # Quick install
 
 * Choose a name for you blog, for this example we will call it `MYBLOG`. Replace it with your name in the commands that will follow.
