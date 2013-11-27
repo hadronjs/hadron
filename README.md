@@ -34,25 +34,31 @@ That said, early adopters/testers are more than welcome :).
 
 # Quick install
 
-* Choose a name for you blog, for this example we will call it `MYBLOG`. Replace it with your name in the commands that will follow.
-* Create a directory for your blog
+* Choose a name for you blog, for this example we will call it `MYBLOG`. Replace it with your name in the commands 
+  that will follow.
+* Create a directory for your blog and create a new git repo
 ```
 $ mkdir MYBLOG
+$ git init
 ```
-* Download and extract the [hadron-seed](https://github.com/hadronjs/hadron-seed) project
+
+* Checkout the `hadron-seed` repository
 ```
-$ wget https://github.com/hadronjs/hadron-seed/archive/master.tar.gz -O hadron-seed.tar.gz
+$ git remote add hadron-seed -m master git://github.com/hadronjs/hadron-seed.git
+$ git pull -s recursive -X theirs hadron-seed master
 ```
-* Extract it into your blog directory
-```
-$ tar -xzvf hadron-seed.tar.gz -C MYBLOG hadron-seed-master --strip-components=1 
-```
+
 * Install the dependencies, build and install the application
 ```
-$ cd MYBLOG
 $ npm install
 $ grunt install
 $ grunt build
+```
+
+* [Optional] Commit the changes to your new repo
+```
+$ git add -A
+$ git commit -m "My first Hadron blog"
 ```
 
 * Fire it up
@@ -86,6 +92,11 @@ on the target system, to rebuild binary modules before the app starts.
 ```
 $ NODE_ENV=production node app.js
 ```
+
+# Easy deploy on OpenShift PaaS
+
+You can easily deploy your Hadron blog to OpenShift and having it running on the cloud with minimal effort 
+(and for free btw). Check out the [hadron-openshift-seed](https://github.com/hadronjs/hadron-openshift-seed) project.
 
 # Update
 
