@@ -40,7 +40,7 @@
     "mocha": "~1.12.0",
     "chai": "~1.7.2",
     "grunt-cli": "~0.1.11",
-    "grunt-cli": "~0.4.1",
+    "grunt": "~0.4.1",
     "rimraf": "~2.2.2",
     "supertest": "~0.8.1",
     "spawned": "~0.1.0",
