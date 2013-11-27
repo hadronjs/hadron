@@ -11,15 +11,13 @@ describe('controllers', function() {
     //we clear tmp dir first
     rimraf.sync('tmp');
 
-    spawned('node_modules/grunt-cli/bin/grunt', ['--stack', 'build'], {
-        out: process.stdout,
-        err: process.stderr
-      })
+    spawned('node_modules/grunt-cli/bin/grunt', ['--stack', 'build'])
       .then(function() {
-        return spawned('node_modules/grunt-cli/bin/grunt', ['--stack', 'install'], {
-          out: process.stdout,
-          err: process.stderr
-        })
+        return spawned('node_modules/grunt-cli/bin/grunt', ['--stack', 'install'])
+      })
+      .otherwise(function(execErr) {
+        console.error(execErr.combined);
+        console.error(execErr.stack);
       })
       .then(function() {
         return particles.run({config: {
