@@ -1,6 +1,6 @@
 {
   "name": "hadron",
-  "description": "Minimalistic blogging/publishing platform for Node.js",
+  "description": "Minimalist blogging/publishing platform for Node.js",
   "version": "0.1.0",
   "homepage": "https://github.com/hadronjs/hadron",
   "author": {
@@ -34,7 +34,8 @@
     "level-sublevel": "~5.1.1",
     "level-indico": "~0.3.1",
     "node-uuid": "~1.4.1",
-    "minimodel": "~0.1.3"
+    "minimodel": "~0.1.3",
+    "delega": "~0.1.0"
   },
   "devDependencies": {
     "mocha": "~1.12.0",

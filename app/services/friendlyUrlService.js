@@ -1,4 +1,4 @@
-var objectUtils = require('../utils/objects');
+var delega = require('delega');
 
 
 var __module = {
@@ -8,7 +8,7 @@ var __module = {
 module.exports = function(friendlyUrlRepository) {
   var friendlyUrlService = {};
   
-  objectUtils.createDelegate(friendlyUrlService, friendlyUrlRepository, [
+  delega.delegateToObject(friendlyUrlService, friendlyUrlRepository, [
     'retrieve', 'delete'
   ]);
   

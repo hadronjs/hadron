@@ -1,4 +1,4 @@
-var objectUtils = require('../utils/objects');
+var delega = require('delega');
 
 
 var __module = {
@@ -8,7 +8,7 @@ var __module = {
 module.exports = function(settingsRepository) {
   var settingsService = {};
   
-  objectUtils.createDelegate(settingsService, settingsRepository, [
+  delega.delegateToObject(settingsService, settingsRepository, [
     'retrieveSettings', 'saveSettings'
   ]);
   

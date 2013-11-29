@@ -1,4 +1,4 @@
-var objectUtils = require('../utils/objects');
+var delega = require('delega');
 
 
 var __module = {
@@ -11,7 +11,7 @@ function PostsService(Post, postRepository, friendlyUrlRepository) {
   this.friendlyUrlRepository = friendlyUrlRepository;
 }
   
-objectUtils.createDelegateWithinContext(PostsService.prototype, 'postRepository', [
+delega.delegateToProperty(PostsService, 'postRepository', [
   'retrieve',
   'findAllOrderByDate',
   'findAllPublishedOrderByDate',

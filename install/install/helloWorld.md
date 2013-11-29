@@ -1,5 +1,6 @@
 
-This is the "Hello world" post of [Hadron](https://github.com/hadronjs/hadron), a Node.js blogging platform, minimalistic and extensible. I'm going to keep this post **because I love Hadron**, beside the fact that *this post is cool*. 
+This is the "Hello world" post of [Hadron](https://github.com/hadronjs/hadron), a Node.js blogging platform, minimalist
+ and extensible. I'm going to keep this post **because I love Hadron**, beside the fact that *this post is cool*. 
 
 ### Reasons I like Hadron
 

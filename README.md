@@ -1,6 +1,6 @@
 # Synopsis
 
-*Hadron* is a **minimalistic, extensible publishing/blogging platform** written in Node.js, best enjoyed by a Node.js developer :).
+*Hadron* is a **minimalist, extensible publishing/blogging platform** written in Node.js, best enjoyed by a Node.js developer :).
 
 Hadron gives you the foundation to build **your very own** blog, thanks to its composable architecture.
 
@@ -79,7 +79,7 @@ $ node app
 
 * Remember to install ONLY your production dependencies
 ```
-$ rm -rf node_modules
+$ rm -rf ./node_modules
 $ npm install --production
 ```
 
@@ -114,7 +114,7 @@ $ grunt build
 
 It was built mainly for 2 reasons:
 
-* Provide an elegant, minimalistic, fully functional publishing platform (e.g. who wants to maintain a DB server for just a personal blog???).
+* Provide an elegant, minimalist, fully functional publishing platform (e.g. who wants to maintain a DB server for just a personal blog???).
 * Provide a proof of concept to show how easy it can be to build composable architectures using [Scatter](https://github.com/mariocasciaro/scatter) IoC and the [Particles](https://github.com/particles) plaftorm.
 
 Hadron itself is an npm packaged Scatter module (a particle), and is installed as an npm dependency from an `hadron-seed` module, this makes updating the core unbelievably easy (just `npm update`), and **allows you to build your very own version of Hadron** without affecting the core or plugins.
@@ -126,7 +126,11 @@ Hadron itself is an npm packaged Scatter module (a particle), and is installed a
 
 ## Feedback & Social
 
-Any feedback is welcome. If you just like/dislike Hadron, if you tried it, if are using it for your blog/website, please let us know with a tweet mentioning [@hadronjs](https://twitter.com/hadronjs).
+Any feedback is welcome. If you just like/dislike Hadron, if you tried it, if are using it for your blog/website, 
+please let us know with a tweet mentioning [@hadronjs](https://twitter.com/hadronjs).
+
+Also there is a Google group you can use to ask questions and discuss about Hadron. 
+Visit the [Hadron Google group](http://groups.google.com/d/forum/hadronjs).
 
 ---
 
