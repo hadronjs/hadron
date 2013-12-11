@@ -10,10 +10,10 @@ var self = module.exports = {
   },
 
   route: function(req, res, next) {
-    self.log.silly('Checking friendly url ' + req.url);
+    self.log.trace('Checking friendly url ' + req.url);
     self.friendlyUrlService.retrieve(req.params.friendlyUrl).then(function(url) {
       if(url) {
-        self.log.silly('Friendly url matched '+ req.params.friendlyUrl + '=>' + url.url);
+        self.log.trace('Friendly url matched '+ req.params.friendlyUrl + '=>' + url.url);
         req.url = url.url;
       }
 

@@ -10,5 +10,10 @@
     "app": {
       "particles": ["${appRoot}/app", "${appRoot}/install"]
     }
+  },
+  "logger": {
+    "express/access": {
+      "level": "none"
+    }
   }
 }

@@ -31,7 +31,7 @@ angular.module('hadronAdmin.controllers', [
     return self;
   })
   
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     // For any unmatched url, redirect to /
     $urlRouterProvider
       .when('/', '/posts/list')
@@ -85,7 +85,7 @@ angular.module('hadronAdmin.controllers', [
          }]
         }
       });
-  })
+  }])
 
   .controller('NavbarCtrl', ['$scope', 'navbarCollapseSvc', function($scope, navbarCollapseSvc) {
     $scope.isCollapsed = function() {

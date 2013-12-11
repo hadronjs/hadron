@@ -39,10 +39,14 @@ html(ng-app="hadronAdmin")
                 span.fa.fa-plus
                 |  Create post
             li &nbsp;
-            li
-              a(href='#/settings/edit')
-                span.glyphicon.glyphicon-wrench
-                |  Settings
+            li.dropdown
+              a.dropdown-toggle(href="#", data-toggle="dropdown") Settings 
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#/settings/edit')
+                    span.glyphicon.glyphicon-wrench
+                    |  Admin user
             li &nbsp;
             li
               a(href="/auth/logout")
