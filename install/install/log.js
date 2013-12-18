@@ -5,5 +5,5 @@ module.exports = function(logger) {
 
 
 module.exports.__module = {
-  args: ['utils/logger']
+  args: ['logger']
 };

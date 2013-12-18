@@ -11,7 +11,7 @@ var self = module.exports = {
       log: 'install/log',
       config: "config"
     },
-    provides: 'install'
+    provides: 'install/install'
   },
 
   install: function() {   

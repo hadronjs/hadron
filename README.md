@@ -44,7 +44,7 @@ $ git init
 
 * Checkout the `hadron-seed` repository
 ```
-$ git remote add hadron-seed -m master git://github.com/hadronjs/hadron-seed.git
+$ git remote add hadron-seed -m master https://github.com/hadronjs/hadron-seed.git
 $ git pull -s recursive -X theirs hadron-seed master
 ```
 

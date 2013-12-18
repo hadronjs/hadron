@@ -1,7 +1,7 @@
 
 var self  = module.exports = {
   __module: {
-    provides: {setup: {}},
+    provides: {"controllers/setup": {}},
     properties: {
       authHelper: 'controllers/helpers/authHelper'
     }

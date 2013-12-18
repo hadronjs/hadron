@@ -2,7 +2,7 @@
 
 var self = module.exports = {
   __module: {
-    provides: 'setup',
+    provides: 'controllers/setup',
     properties: {
       log: 'controllers/log',
       _settingsService: 'services/settingsService',

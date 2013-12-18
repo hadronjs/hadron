@@ -2,7 +2,7 @@ var path = require('path');
 
 var self = module.exports = {
   __module: {
-    provides: {setup: {after: "*"}},
+    provides: {"controllers/setup": {after: "*"}},
     properties: {
       log: 'controllers/log',
       postService: 'services/postService'

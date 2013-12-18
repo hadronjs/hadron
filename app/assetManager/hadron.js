@@ -3,10 +3,10 @@
 var self = module.exports = {
   __module: {
     provides: {
-      use_scripts: {},
-      use_stylesheets: {},
-      register_assets_dir: {},
-      register_views_dir: {after: ['assetManager/particles-express']}
+      "assetManager/use_scripts": {},
+      "assetManager/use_stylesheets": {},
+      "assetManager/register_assets_dir": {},
+      "assetManager/register_views_dir": {after: ['assetManager/particles-express']}
     },
     properties: {
       jquery: 'assetManager/jquery',

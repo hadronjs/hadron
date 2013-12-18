@@ -6,13 +6,13 @@ var self = module.exports = {
       _settingsService: 'services/settingsService'
     },
     provides: {
-      registerMiddleware: {
+      "express/middleware/register": {
         before: ['express/middleware/router']
       }
     }
   },
 
-  registerMiddleware: function(expressApp) {
+  register: function(expressApp) {
     //pass the user object into the view
     expressApp.use('/', function(req, res, next) {
      self._settingsService.retrieveSettings().then(function(settings) {
