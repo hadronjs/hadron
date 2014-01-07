@@ -1,7 +1,7 @@
 {
   "name": "hadron",
   "description": "Minimalist blogging/publishing platform for Node.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/hadronjs/hadron",
   "author": {
     "name": "Mario Casciaro"
@@ -45,24 +45,24 @@
     "rimraf": "~2.2.2",
     "supertest": "~0.8.1",
     "spawned": "~0.1.0",
-    "hadron-grunt-helper": "~0.1.0",
-    "particles": "~0.1.3",
-    "particles-express": "~0.1.1",
-    "grunt-particles-assetmanager": "~0.1.0",
-    "particles-bootstrap": "~0.1.0",
-    "particles-angular": "~0.1.0",
-    "particles-jquery": "~0.1.0",
-    "particles-passport": "~0.1.0"
+    "hadron-grunt-helper": "~0.2.0",
+    "particles": "~0.2.0",
+    "particles-express": "~0.2.0",
+    "grunt-particles-assetmanager": "~0.2.0",
+    "particles-bootstrap": "~0.2.0",
+    "particles-angular": "~0.2.0",
+    "particles-jquery": "~0.2.0",
+    "particles-passport": "~0.2.0"
   },
   "peerDependencies": {
-    "particles": "~0.1.3",
-    "particles-express": "~0.1.1",
-    "grunt-particles-assetmanager": "~0.1.0",
-    "particles-bootstrap": "~0.1.0",
-    "particles-angular": "~0.1.0",
-    "particles-jquery": "~0.1.0",
-    "particles-passport": "~0.1.0",
-    "particles-assetmanager-angular-extender": "~0.1.0"
+    "particles": "~0.2.0",
+    "particles-express": "~0.2.0",
+    "grunt-particles-assetmanager": "~0.2.0",
+    "particles-bootstrap": "~0.2.0",
+    "particles-angular": "~0.2.0",
+    "particles-jquery": "~0.2.0",
+    "particles-passport": "~0.2.0",
+    "particles-assetmanager-angular-extender": "~0.2.0"
   },
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha test/server/*.js -t 6000 --reporter spec"
