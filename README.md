@@ -1,16 +1,18 @@
+[![NPM version](https://badge.fury.io/js/hadron.png)](http://badge.fury.io/js/hadron)
+[![Build Status](https://travis-ci.org/hadronjs/hadron.png)](https://travis-ci.org/hadronjs/hadron)
+[![Dependency Status](https://gemnasium.com/hadronjs/hadron.png)](https://gemnasium.com/hadronjs/hadron)
+
 # Synopsis
 
 *Hadron* is a **minimalist, extensible publishing/blogging platform** written in Node.js, best enjoyed by a Node.js developer :).
 
 Hadron gives you the foundation to build **your very own** blog, thanks to its composable architecture.
 
-The core is built reusing well-known and (mostly) loved javascript frameworks and libraries (Express, Grunt, LevelDB, etc.) with a sprinkle of [Scatter](https://github.com/mariocasciaro/scatter) IoC to give the application **composability** from the ground up.
-
-[![Build Status](https://travis-ci.org/hadronjs/hadron.png)](https://travis-ci.org/hadronjs/hadron)
+The core is built reusing well-known and (mostly) loved javascript solutions  (Express, Grunt, LevelDB, Angular, etc.) with a sprinkle of [Scatter](https://github.com/mariocasciaro/scatter) IoC to give **composability** from the ground up.
 
 #### Tech Features
 
-* Built in Javascript on **Node.js** with the aid of the [Scatter](https://github.com/mariocasciaro/scatter) IoC container and the [Particles](https://github.com/particles) platform.
+* Built on top of the **Node.js** platform, with the aid of the [Scatter](https://github.com/mariocasciaro/scatter) IoC container and the [Particles](https://github.com/particles) platform.
 * Uses **LevelDB** by default to store the data. No database servers to install or maintain.
 * Static public frontend built with **jade**
 * Admin interface built with **Angular.js**
@@ -38,7 +40,7 @@ That said, early adopters/testers are more than welcome :).
   that will follow.
 * Create a directory for your blog and create a new git repo
 ```
-$ mkdir MYBLOG
+$ mkdir MYBLOG && cd MYBLOG
 $ git init
 ```
 
@@ -70,11 +72,6 @@ $ node app
     * The admin interface is at [http://localhost:3000/admin](http://localhost:3000/admin). Use the credentials `admin/admin` to login the first time.
     * **Don't forget to change your password if you are deploying Hadron in production!**
 
-
-# Customization
-
-...coming soon
-
 # In production
 
 * Remember to install ONLY your production dependencies
@@ -93,20 +90,41 @@ on the target system, to rebuild binary modules before the app starts.
 $ NODE_ENV=production node app.js
 ```
 
-# Easy deploy on OpenShift PaaS
+# Easy deployment on the OpenShift PaaS
 
-You can easily deploy your Hadron blog to OpenShift and having it running on the cloud with minimal effort 
-(and for free btw). Check out the [hadron-openshift-seed](https://github.com/hadronjs/hadron-openshift-seed) project.
+You can easily deploy your Hadron blog to OpenShift and having it running on the cloud with minimal effort. Check out the [hadron-openshift-seed](https://github.com/hadronjs/hadron-openshift-seed) project.
 
 # Update
 
-Thanks to Scatter/Particles, it should be as easy as:
+* Remove old dependencies
 ```
-$ npm update
+$ rm -rf node_modules
+```
+
+* Pull the latest `hadron-seed` code (this will update versions in `package.json` and default config if needed).
+```
+$ git pull -s recursive hadron-seed master
+```
+
+* (Optional) If you modified any file locally you might need to merge any conflict.
+```
+$ git mergetool
+```
+
+* Install and build as usual
+```
+$ npm install
 $ grunt install
 $ grunt build
 ```
 
+# Plugin & Theme Development
+
+Please refer to the wiki: 
+
+#### [Plugin & Theme Development](https://github.com/hadronjs/hadron/wiki/Develop)
+
+-----
 
 # The Philosophy
 

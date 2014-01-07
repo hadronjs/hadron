@@ -6,12 +6,17 @@ var self = module.exports = {
       "assetManager/use_scripts": {},
       "assetManager/use_stylesheets": {},
       "assetManager/register_assets_dir": {},
-      "assetManager/register_views_dir": {after: ['assetManager/particles-express']}
+      "assetManager/register_views_dir": {after: ['./particles-express']},
+      "assetManager/declare_angular_scripts": {}
     },
     properties: {
       jquery: 'assetManager/jquery',
       angular: 'assetManager/angular'
     }
+  },
+  
+  declare_angular_scripts: function() {
+    return {cwd: __dirname + "/../assets", file: "js/**/*.js"};
   },
 
   register_assets_dir: function() {
@@ -26,7 +31,6 @@ var self = module.exports = {
     return {
       admin: [
         self.jquery.exports.scripts.all,
-        "js/shatter.js",
 
         "lib/toastr/toastr.js",
 

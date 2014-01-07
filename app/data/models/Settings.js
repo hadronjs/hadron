@@ -45,9 +45,24 @@ var Settings = minimodel.Model.extend({
     headline: String
   },
   social: {
-    twitter: String,
-    linkedin: String,
-    github: String
+    twitter: {
+      username: String,
+      showShareButton: Boolean
+    },
+    linkedin: {
+      username: String,
+      showShareButton: Boolean
+    },
+    github: {
+      username: String
+    },
+    google: {
+      username: String,
+      showShareButton: Boolean
+    },
+    facebook: {
+      showShareButton: Boolean
+    }
   }
 });
 

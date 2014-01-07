@@ -12,10 +12,23 @@ block main
       span.timedate
         span.fa.fa-clock-o
         |  #{post.createdDate.toLocaleDateString()}
-      span.share-buttons
-        if settings.social.twitter
-          span
-            a(href="https://twitter.com/share" class="twitter-share-button" data-via="#{settings.social.twitter}") Share
+      div.share-buttons
+        if settings.social.twitter.showShareButton
+          span.share-button
+            a(href="https://twitter.com/share", class="twitter-share-button", data-via="#{settings.social.twitter.username}") Share
+            
+        if settings.social.google.showShareButton
+          span.share-button
+            div.g-plusone(data-size="medium")
+          
+        if settings.social.linkedin.showShareButton
+          span.share-button
+            script(type="IN/Share", data-counter="right", data-showZero="true", data-url="#{fullUrl}")
+
+        if settings.social.facebook.showShareButton
+          span.share-button
+            span(class="fb-share-button", data-type="button_count")
+    
     .lead= post.lead
     .article-content!= post.getRenderedContent()
   // VIEW-CONTRIBUTION-START[post-view-article-footer]
@@ -24,3 +37,31 @@ block main
 block footer
   // VIEW-CONTRIBUTION-START[post-view-footer]
   // VIEW-CONTRIBUTION-END[post-view-footer]
+  if(settings.social.twitter.showShareButton)
+    script.
+      //Twitter share button
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+      if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+      fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    
+  if(settings.social.linkedin.showShareButton)
+    script(src="//platform.linkedin.com/in.js",type="text/javascript").
+      lang: en_US
+
+  if(settings.social.facebook.showShareButton)
+    script.
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+  if(settings.social.google.showShareButton)
+    script.
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js?onload=onLoadCallback';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();

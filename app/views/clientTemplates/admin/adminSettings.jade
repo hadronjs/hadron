@@ -1,0 +1,20 @@
+.page-admin-savesettings
+  .panel.panel-default
+    .panel-heading Admin user
+    .panel-body
+      form(role="form", name="admin", novalidate)
+        div.form-group(ng-class="{'has-error': hasError('admin.username')}")
+          label.control-label(for="username") Username
+          input.form-control(name="username", ng-model="settings.adminUser.username", required)
+          span.control-label(ng-show="hasError('admin.username.required')") Required!
+
+        div.form-group(ng-class="{'has-error': hasError('admin.password')}")
+          label.control-label(for="password") New Password
+          input.form-control(name="password", type="password", ng-model="settings.adminUser.password", placeholder="")
+        div.form-group(ng-class="{'has-error': hasError('admin.confirm_password')}")
+          label.control-label(for="confirm_password") Confirm new Password
+          input.form-control(name="confirm_password", type="password", ui-validate=" '$value==settings.adminUser.password'", ui-validate-watch=" 'settings.adminUser.password' ", placeholder="", ng-model="confirm_password")
+          span.control-label(ng-show="hasError('admin.confirm_password.validator')") Passwords do not match
+
+        div.actions
+          a.btn.btn-primary(type="button", ng-click="save(settings, admin.$invalid)") Save

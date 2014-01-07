@@ -1,4 +1,6 @@
-!!! 5
+include ../mixins/menuItem
+
+doctype html
 html(ng-app="hadronAdmin")
   head
     meta(charset='utf-8')
@@ -27,31 +29,24 @@ html(ng-app="hadronAdmin")
           a.navbar-brand(href='/')
             img(src="/public/img/hadron_logo.png")
             | Hadron
-        // Collect the nav links, forms, and other content for toggling
         .navbar-collapse(collapse="isCollapsed()", style="height: 1px")
           ul.nav.navbar-nav
-            li
-              a(href='#/posts/list')
-                span.glyphicon.glyphicon-list
-                |  Posts
-            li
-              a(href='#/posts/create')
-                span.fa.fa-plus
-                |  Create post
-            li &nbsp;
+            +menuItem('#/posts/list', 'glyphicon glyphicon-list', 'Posts')
+            +menuItem('#/posts/create', 'fa fa-plus', 'Create post')
+            // VIEW-CONTRIBUTION-START[admin-tpl-menuItems]
+            // VIEW-CONTRIBUTION-END[admin-tpl-menuItems]
             li.dropdown
-              a.dropdown-toggle(href="#", data-toggle="dropdown") Settings 
+              a.dropdown-toggle(href="#", data-toggle="dropdown")
+                span(class="glyphicon glyphicon-wrench")
+                |  Settings 
                 b.caret
               ul.dropdown-menu
-                li
-                  a(href='#/settings/edit')
-                    span.glyphicon.glyphicon-wrench
-                    |  Admin user
-            li &nbsp;
-            li
-              a(href="/auth/logout")
-                span.glyphicon.glyphicon-log-out
-                |  Logout
+                +menuItem('#/settings/website', 'fa fa-globe', 'Website')
+                +menuItem('#/settings/social', 'fa fa-comment', 'Social')
+                +menuItem('#/settings/admin', 'fa fa-user', 'Admin')
+                // VIEW-CONTRIBUTION-START[admin-tpl-settingsMenuItems]
+                // VIEW-CONTRIBUTION-END[admin-tpl-settingsMenuItems]
+            +menuItem('/auth/logout', 'glyphicon glyphicon-log-out', 'Logout')
     .container
       .row
         .col-lg-12(ui-view)

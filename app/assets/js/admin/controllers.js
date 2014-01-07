@@ -72,11 +72,11 @@ angular.module('hadronAdmin.controllers', [
          }]
         }
       })
-      .state('editSettings', {
-        url: "/settings/edit",
-        templateUrl: "templates/admin/saveSettings",
-        controller: 'saveSettingsCtrl',
-        title: "Edit settings",
+      .state('websiteSettings', {
+        url: "/settings/website",
+        templateUrl: "templates/admin/websiteSettings",
+        controller: 'websiteSettingsCtrl',
+        title: "Website settings",
         resolve: {
           settings: ['$http', function($http){
             return $http.get('api/settings').then(function(data) {
@@ -84,7 +84,33 @@ angular.module('hadronAdmin.controllers', [
             });
          }]
         }
-      });
+      })
+      .state('adminSettings', {
+        url: "/settings/admin",
+        templateUrl: "templates/admin/adminSettings",
+        controller: 'adminSettingsCtrl',
+        title: "Admin settings",
+        resolve: {
+          settings: ['$http', function($http){
+            return $http.get('api/settings').then(function(data) {
+              return data.data;
+            });
+          }]
+        }
+      })
+      .state('socialSettings', {
+        url: "/settings/social",
+        templateUrl: "templates/admin/socialSettings",
+        controller: 'socialSettingsCtrl',
+        title: "Social networks settings",
+        resolve: {
+          settings: ['$http', function($http){
+            return $http.get('api/settings').then(function(data) {
+              return data.data;
+            });
+          }]
+        }
+      })
   }])
 
   .controller('NavbarCtrl', ['$scope', 'navbarCollapseSvc', function($scope, navbarCollapseSvc) {
@@ -170,32 +196,62 @@ angular.module('hadronAdmin.controllers', [
     }
   ])
 
-  .controller('saveSettingsCtrl', ['$scope', '$http', 'notifyUser', 'settings', '$q', 
+  .controller('websiteSettingsCtrl', ['$scope', '$http', 'notifyUser', 'settings', '$q',
     function($scope, $http, notifyUser, settings, $q) {
-      shatter.contribute('saveSettingsCtrl', 'controllerImpl', arguments);
-      
       $scope.settings = settings || {};
 
-      $scope.saveWebsite = function(settings, invalid) {
-        return $scope.save('website', settings, invalid);
-      };
-
-      $scope.saveSocial = function(settings, invalid) {
-        return $scope.save('social', settings, invalid);
-      };
-
-      $scope.saveAdminUser = function(settings, invalid) {
-        return $scope.save('adminUser', settings, invalid);
-      };
-      
-      $scope.save = function(what, settings, invalid) {
+      $scope.save = function(settings, invalid) {
         if(invalid) {
           notifyUser({text: "Please review the data in the form", type:'error'});
           return $q.reject();
         }
-  
-        var data = {};
-        data[what] = settings[what];
+
+        var data = {
+          website: settings.website
+        };
+        return $http.put('api/settings', data).success(function(data) {
+          notifyUser({text: "Settings successfully saved", type:'success'});
+          return data;
+        });
+      };
+    }
+  ])
+
+
+  .controller('adminSettingsCtrl', ['$scope', '$http', 'notifyUser', 'settings', '$q',
+    function($scope, $http, notifyUser, settings, $q) {
+      $scope.settings = settings || {};
+
+      $scope.save = function(settings, invalid) {
+        if(invalid) {
+          notifyUser({text: "Please review the data in the form", type:'error'});
+          return $q.reject();
+        }
+
+        var data = {
+          admin: settings.admin
+        };
+        return $http.put('api/settings', data).success(function(data) {
+          notifyUser({text: "Settings successfully saved", type:'success'});
+          return data;
+        });
+      };
+    }
+  ])
+
+  .controller('socialSettingsCtrl', ['$scope', '$http', 'notifyUser', 'settings', '$q',
+    function($scope, $http, notifyUser, settings, $q) {
+      $scope.settings = settings || {};
+
+      $scope.save = function(settings, invalid) {
+        if(invalid) {
+          notifyUser({text: "Please review the data in the form", type:'error'});
+          return $q.reject();
+        }
+
+        var data = {
+          social: settings.social
+        };
         return $http.put('api/settings', data).success(function(data) {
           notifyUser({text: "Settings successfully saved", type:'success'});
           return data;
@@ -203,5 +259,5 @@ angular.module('hadronAdmin.controllers', [
       };
     }
   ]);
-  
-  
+
+    

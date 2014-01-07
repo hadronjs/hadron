@@ -1,4 +1,4 @@
-!!! 5
+doctype html
 head
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -34,16 +34,16 @@ body
               span.glyphicon.glyphicon-log-out
               | Logout
       .sidebar-social
-        if settings.social.twitter
+        if settings.social.twitter.username
           div(style="text-align: center")
-            a.twitter-follow-button(href="https://twitter.com/#{settings.social.twitter}", data-show-count="false",data-lang="en")
-              | Follow @#{settings.social.twitter}
-        if settings.social.twitter
-          a.fa.fa-twitter(href="https://twitter.com/#{settings.social.twitter}", target="_blank")
-        if settings.social.linkedin
-          a.fa.fa-linkedin(href="https://www.linkedin.com/in/#{settings.social.linkedin}", target="_blank")
-        if settings.social.github
-          a.fa.fa-github(href="https://github.com/#{settings.social.github}", target="_blank")
+            a.twitter-follow-button(href="https://twitter.com/#{settings.social.twitter.username}", data-show-count="false",data-lang="en")
+              | Follow @#{settings.social.twitter.username}
+        if settings.social.twitter.username
+          a.fa.fa-twitter(href="https://twitter.com/#{settings.social.twitter.username}", target="_blank")
+        if settings.social.linkedin.username
+          a.fa.fa-linkedin(href="https://www.linkedin.com/in/#{settings.social.linkedin.username}", target="_blank")
+        if settings.social.github.username
+          a.fa.fa-github(href="https://github.com/#{settings.social.github.username}", target="_blank")
       .poweredby
         | Proudly powered by 
         a(href="https://github.com/hadronjs/hadron", target="_blank") Hadron
@@ -67,15 +67,10 @@ body
         $("#wrapper").toggleClass("active");
     });
   
-  if(settings.social.twitter)
+  if(settings.social.twitter.username)
     script.
       //Twitter button
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
       if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";
       fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  
-      //Twitter share button
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-      if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
-      fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
     

@@ -1,0 +1,16 @@
+.page-admin-savesettings
+  .panel.panel-default
+    .panel-heading Website
+    .panel-body
+      form(role="form", name="website", novalidate)
+        div.form-group(ng-class="{'has-error': hasError('website.title')}")
+          label.control-label(for="title") Blog Title
+          input.form-control(name="title", ng-model="settings.website.title", placeholder="Enter the blog title", required)
+          span.control-label(ng-show="hasError('website.title.required')") Required!
+  
+        div.form-group(ng-class="{'has-error': hasError('website.headline')}")
+          label.control-label(for="headline") Blog headline
+          textarea.form-control(name="headline", ng-model="settings.website.headline", placeholder="")
+  
+        div.actions
+          a.btn.btn-primary(type="button", ng-click="save(settings, website.$invalid)") Save

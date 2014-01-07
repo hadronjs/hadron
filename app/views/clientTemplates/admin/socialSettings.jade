@@ -1,0 +1,53 @@
+.page-admin-savesettings
+  .panel.panel-default
+    .panel-heading Twitter
+    .panel-body
+      form(role="form", name="twitter", novalidate)
+        .form-group(ng-class="{'has-error': hasError('twitter.username')}")
+          label.control-label(for="username") Username
+            i.form-help.fa.fa-info-circle(tooltip="Your twitter username. This will enable the \"follow me\" button on the homepage, the link to your twitter stream and the \"share\" button on posts")
+          input.form-control(name="username", ng-model="settings.social.twitter.username")
+        .form-group
+          label.control-label(for="showShareButton") Show share button
+          toggle-switch-light(ng-model="settings.social.twitter.showShareButton", text-on="Yes", text-off="No")
+  
+  .panel.panel-default
+    .panel-heading Linkedin
+    .panel-body
+      form(role="form", name="linkedin", novalidate)
+        .form-group(ng-class="{'has-error': hasError('linkedin.username')}")
+          label.control-label(for="username") Username
+          input.form-control(name="username", ng-model="settings.social.linkedin.username")
+        .form-group
+          label.control-label(for="showShareButton") Show share button
+          toggle-switch-light(ng-model="settings.social.linkedin.showShareButton", text-on="Yes", text-off="No")
+
+  .panel.panel-default
+    .panel-heading Google
+    .panel-body
+      form(role="form", name="google", novalidate)
+        .form-group(ng-class="{'has-error': hasError('google.username')}")
+          label.control-label(for="username") Username
+          input.form-control(name="username", ng-model="settings.social.google.username")
+        .form-group
+          label.control-label(for="showShareButton") Show share button
+          toggle-switch-light(ng-model="settings.social.google.showShareButton", text-on="Yes", text-off="No")
+
+  .panel.panel-default
+    .panel-heading Facebook
+    .panel-body
+      form(role="form", name="facebook", novalidate)
+        .form-group
+          label.control-label(for="showShareButton") Show share button
+          toggle-switch-light(ng-model="settings.social.facebook.showShareButton", text-on="Yes", text-off="No")
+
+  .panel.panel-default
+    .panel-heading Github
+    .panel-body
+      form(role="form", name="github", novalidate)
+        .form-group(ng-class="{'has-error': hasError('github.username')}")
+          label.control-label(for="username") Username
+          input.form-control(name="username", ng-model="settings.social.github.username")
+
+  div.actions
+    a.btn.btn-primary(type="button", ng-click="save(settings, social.$invalid)") Save

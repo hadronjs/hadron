@@ -78,14 +78,15 @@ AbstractRepository.prototype.ensureModel = function(data) {
 };
 
 
-AbstractRepository.prototype.save = function(entity) {
+AbstractRepository.prototype.save = function(entity, options) {
+  options = options || {};
   var self = this;
   var promise = AbstractRepository.promises.resolve(entity);
   
   //combine the two entities if it's an update
-  if(entity.id) {
+  if(entity.id && !options.overwrite) {
     var data = entity;
-    if(entity instanceof self.model) {
+    if(entity instanceof minimodel.Model) {
       data = entity.toDb();
     }
     promise = self.retrieve(entity.id).then(function(entityFromDb) {

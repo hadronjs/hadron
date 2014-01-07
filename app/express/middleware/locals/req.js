@@ -13,6 +13,7 @@ var self = module.exports = {
     //pass the user object into the view
     expressApp.use('/', function(req, res, next) {
       expressApp.locals.req = req;
+      expressApp.locals.fullUrl = req.protocol + "://" + req.get('host') + req.url;
       next();
     });
   }

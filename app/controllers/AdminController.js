@@ -9,7 +9,7 @@ var self  = module.exports = {
 
   index: function(req, res) {
     res.render('admin/index', {});
-  },
+  }, 
 
   setup: function(express) {
     express.all("/admin*", self.authHelper.isAdmin);
