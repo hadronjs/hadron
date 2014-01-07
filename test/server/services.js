@@ -1,24 +1,28 @@
 var expect = require('chai').expect,
   rimraf = require('rimraf'),
-  particles = require('particles');
+  Particles = require('particles');
 
 describe('services', function() {
   var scatter = null;
-  beforeEach(function(done) {
-    particles.run({config: {
-      runServices: [],
+  var particles;
+  beforeEach(function() {
+    particles = new Particles({config: {
       dataDir: "${appRoot}/tmp",
-      particles: {
-        app: {
+      "containers": {
+        "default": {
           particles: ["${appRoot}/app"]
         }
       }
-    }}).then(function(res) {
-        //clean tmp dir
-        rimraf.sync(particles.config.get('dataDir'));
-        scatter = res;
-        done()
-      }).otherwise(done);
+    }});
+    
+    rimraf.sync(particles.config.get('dataDir'));
+    scatter = particles.scatter;
+  });
+  
+  afterEach(function(done) {
+    scatter.load("data/levelup").then(function(levelup) {
+      levelup.db.close(done);
+    })
   });
   
   describe('postService', function(){

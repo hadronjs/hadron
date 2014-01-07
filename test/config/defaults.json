@@ -6,14 +6,23 @@
     "viewsDir": "${generatedDir}/views",
     "publicUrlRoot": "/public"
   },
-  "particles": {
-    "app": {
+  "containers": {
+    "default": {
       "particles": ["${appRoot}/app", "${appRoot}/install"]
     }
   },
   "logger": {
-    "express/access": {
-      "level": "none"
+    "root": {
+      "level": "none",
+      "streams": [
+        {
+          "level": "debug",
+          "stream": "process.stdout",
+          "streamOptions": {
+            "mode": "short", "prettyPrint": true
+          }
+        }
+      ]
     }
   }
 }

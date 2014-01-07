@@ -49,6 +49,7 @@
     "particles": "~0.2.0",
     "particles-express": "~0.2.0",
     "grunt-particles-assetmanager": "~0.2.0",
+    "grunt-particles": "~0.2.0",
     "particles-bootstrap": "~0.2.0",
     "particles-angular": "~0.2.0",
     "particles-jquery": "~0.2.0",

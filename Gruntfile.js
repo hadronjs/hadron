@@ -6,20 +6,12 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     particles: {
-      build: {
-        options: {
-          config: {
-            configDir: "${appRoot}/test/config"
-          },
-          runServices: ['svc|sequence!grunt/configure_grunt']
-        }
-      },
       install: {
         options: {
           config: {
             configDir: "${appRoot}/test/config"
           },
-          runServices: ['svc|sequence!install/install']
+          runService: 'svc|sequence!install/install'
         }
       }
     }

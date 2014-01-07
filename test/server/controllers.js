@@ -3,15 +3,16 @@ var expect = require('chai').expect,
   spawned = require('spawned'),
   request = require('supertest'),
   
-  particles = require('particles');
+  Particles = require('particles');
 
 describe('controllers', function() {
-  var scatter = null, app = null, server = null;
+  var scatter, app, server, db;
   before(function(done) {
+    var particles;
     //we clear tmp dir first
     rimraf.sync('tmp');
 
-    spawned('node_modules/grunt-cli/bin/grunt', ['--stack', 'build'])
+    spawned('node_modules/grunt-cli/bin/grunt', ['--stack', 'build', '--configDir=test/config'])
       .then(function() {
         return spawned('node_modules/grunt-cli/bin/grunt', ['--stack', 'install'])
       })
@@ -20,25 +21,28 @@ describe('controllers', function() {
         console.error(execErr.stack);
       })
       .then(function() {
-        return particles.run({config: {
+        particles = new Particles({config: {
           configDir: "${appRoot}/test/config"
         }});
+        return particles.run();
       })
-      .then(function(res) {
-        scatter = res;
-        return scatter.load("express/app");
+      .then(function() {
+        return particles.scatter.load(["express/app", "data/levelup"]);
       })
-      .then(function(mod) {
-        app = mod.express;
-        server = mod.server;
+      .spread(function(expr, levelup) {
+        app = expr.express;
+        server = expr.server;
+        db = levelup.db;
         done();
       })
       .otherwise(done);
   });
   
-  after(function() {
+  after(function(done) {
     //close the server socket
-    server.close();
+    server.close(function() {
+      db.close(done);
+    });
   });
   
   describe('postController', function() {
