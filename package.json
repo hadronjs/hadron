@@ -34,7 +34,7 @@
     "level-sublevel": "~5.2.0",
     "level-indico": "~0.3.1",
     "node-uuid": "~1.4.1",
-    "minimodel": "~0.1.4",
+    "minimodel": "~0.2.0",
     "delega": "~0.1.0"
   },
   "devDependencies": {

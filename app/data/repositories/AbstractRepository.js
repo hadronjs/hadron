@@ -102,15 +102,12 @@ AbstractRepository.prototype.save = function(entity, options) {
   return promise.then(function(entity) {
     entity = self.ensureModel(entity);
     
-    var err = entity.validate();
-    if(err) {
-      return AbstractRepository.promises.reject(err);
-    }
-    
-    var data = self.beforeSave(entity);
+    return entity.validate().then(function() {
+      var data = self.beforeSave(entity);
 
-    return AbstractRepository.promises.ninvoke(self.db, 'put', data.id, data).then(function() {
-      return entity;
+      return AbstractRepository.promises.ninvoke(self.db, 'put', data.id, data).then(function() {
+        return entity;
+      });
     });
   });
 };
