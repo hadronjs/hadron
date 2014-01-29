@@ -1,7 +1,7 @@
 {
   "name": "hadron",
   "description": "Minimalist blogging/publishing platform for Node.js",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "homepage": "https://github.com/hadronjs/hadron",
   "author": {
     "name": "Mario Casciaro"
