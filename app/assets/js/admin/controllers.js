@@ -229,7 +229,7 @@ angular.module('hadronAdmin.controllers', [
         }
 
         var data = {
-          admin: settings.admin
+          adminUser: settings.adminUser
         };
         return $http.put('api/settings', data).success(function(data) {
           notifyUser({text: "Settings successfully saved", type:'success'});
