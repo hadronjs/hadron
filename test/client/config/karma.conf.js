@@ -1,21 +1,39 @@
 module.exports = function(config){
     config.set({
-    basePath : '../',
+    basePath : '../../../',
 
     files : [
-      'app/lib/angular/angular.js',
-      'app/lib/angular/angular-*.js',
-      'test/lib/angular/angular-mocks.js',
-      'app/js/**/*.js',
-      'test/unit/**/*.js'
+       'app/assets/lib/toastr/*.js',
+       'app/assets/lib/slugg*.js',
+      'node_modules/particles-angular/assets/lib/angular/angular.js',
+      'test/client/test/lib/angular/angular-mocks.js',
+      'app/assets/lib/angular-ui/*.js',
+      'app/assets/js/admin/app.js',
+      'app/assets/js/admin/controllers.js',
+      'app/assets/js/admin/utils.js',
+     
+      //'test/client/test/unit/**/*.js'
+      'test/client/test/unit/navBarControllerSpec.js'
     ],
+
+    exclude : [
+      
+    ],
+
 
     autoWatch : true,
 
     frameworks: ['jasmine'],
-
-    browsers : ['Chrome'],
-
+    // Start these browsers, currently available:
+    // - Chrome
+    // - ChromeCanary
+    // - Firefox
+    // - Opera
+    // - Safari (only Mac)
+    // - PhantomJS
+    // - IE (only Windows)
+    browsers : ['Firefox'], 
+    singleRun: false,
     plugins : [
             'karma-junit-reporter',
             'karma-chrome-launcher',
