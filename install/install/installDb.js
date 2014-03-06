@@ -37,7 +37,13 @@ var self = module.exports = {
       website: {
         title: "Hadron",
         headline: "A Node.js blogging platform for Node.js developers"
-      }
+      },
+
+      menu: [{
+        label: "Home",
+        link: "/",
+        iconClass: "fa fa-home"
+      }]
     });
   },
 

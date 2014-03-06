@@ -1,39 +1,38 @@
-.page-admin-createpost
-  form(role="form", name="savePostForm", novalidate)
-    .form-group(ng-class="{'has-error': hasError('savePostForm.title')}")
-      label.control-label(for="title") Title
-      input.form-control(name="title", ng-model="post.title", placeholder="Enter the post title", required)
-      span.control-label(ng-show="hasError('savePostForm.title.required')") Required!
-    
-    .form-group(ng-class="{'has-error': hasError('savePostForm.friendlyUrl')}")
-      label.control-label(for="friendlyUrl") Friendly Url
-      input.form-control(name="friendlyUrl", ng-model="post.friendlyUrl", placeholder="", required)
-      span.control-label(ng-show="hasError('savePostForm.friendlyUrl.required')") Required!
+form(role="form", name="savePostForm", novalidate)
+  .form-group(ng-class="{'has-error': hasError('savePostForm.title')}")
+    label.control-label(for="title") Title
+    input.form-control(name="title", ng-model="post.title", placeholder="Enter the post title", required)
+    span.control-label(ng-show="hasError('savePostForm.title.required')") Required!
+  
+  .form-group(ng-class="{'has-error': hasError('savePostForm.friendlyUrl')}")
+    label.control-label(for="friendlyUrl") Friendly Url
+    input.form-control(name="friendlyUrl", ng-model="post.friendlyUrl", placeholder="", required)
+    span.control-label(ng-show="hasError('savePostForm.friendlyUrl.required')") Required!
 
-    .form-group(ng-class="{'has-error': hasError('savePostForm.lead')}")
-      label.control-label(for="lead") Description
-        i.form-help.fa.fa-info-circle(tooltip="This description will appear in the post metadata and as headline/preview in post listing")
-      input.form-control(name="lead", ng-model="post.lead", placeholder="Enter a post description here", required)
-      span.control-label(ng-show="hasError('savePostForm.lead.required')") Required!
+  .form-group(ng-class="{'has-error': hasError('savePostForm.lead')}")
+    label.control-label(for="lead") Description
+      i.form-help.fa.fa-info-circle(tooltip="This description will appear in the post metadata and as headline/preview in post listing")
+    input.form-control(name="lead", ng-model="post.lead", placeholder="Enter a post description here", required)
+    span.control-label(ng-show="hasError('savePostForm.lead.required')") Required!
 
-    .form-group
-      label.control-label(for="title") Published
-        i.form-help.fa.fa-info-circle(tooltip="When published the post will show on the blog main page and any user will be able to see the post, otherwise only admin will be able to access the post")
-      toggle-switch-light(ng-model="post.isPublished", text-on="Yes", text-off="No")
+  .form-group
+    label.control-label(for="title") Published
+      i.form-help.fa.fa-info-circle(tooltip="When published the post will show on the blog main page and any user will be able to see the post, otherwise only admin will be able to access the post")
+    toggle-switch-light(ng-model="post.isPublished", text-on="Yes", text-off="No")
 
-    .form-group
-      label.control-label(for="createDate") Created date
-      .input-group
-        span.input-group-addon.btn(ng-click="openDatePicker()")
-          i.glyphicon.glyphicon-calendar
-        input.form-control(type="text", title="createDate", datepicker-popup="fullDate", ng-model="post.createdDate", is-open="datePickerOpened")
+  .form-group
+    label.control-label(for="createDate") Created date
+    .input-group
+      span.input-group-addon.btn(ng-click="openDatePicker()")
+        i.glyphicon.glyphicon-calendar
+      input.form-control(type="text", title="createDate", datepicker-popup="fullDate", ng-model="post.createdDate", is-open="datePickerOpened")
 
 
-    .form-group
-      label.control-label(for="content") Content
-        i.form-help.fa.fa-info-circle(tooltip="Use markdown to format your post content")
-      textarea.form-control(name="content", ng-model="post.content", placeholder="Enter the post content")
-    
-    .actions
-      a.btn.btn-primary(type="button", ng-click="save(post, savePostForm.$invalid)") Save
-      a.btn.btn-default(type="button", ng-href="/posts/{{post.id}}", target="_blank", ng-disabled="!post.id") Preview
+  .form-group
+    label.control-label(for="content") Content
+      i.form-help.fa.fa-info-circle(tooltip="Use markdown to format your post content")
+    textarea.textarea-lg.form-control(name="content", ng-model="post.content", placeholder="Enter the post content")
+  
+  .actions
+    button.btn.btn-primary(type="button", ng-click="save(post, savePostForm.$invalid)") Save
+    a.btn.btn-default(type="button", ng-href="/posts/{{post.id}}", target="_blank", ng-disabled="!post.id") Preview

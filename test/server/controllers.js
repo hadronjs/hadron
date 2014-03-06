@@ -5,6 +5,8 @@ var expect = require('chai').expect,
   
   Particles = require('particles');
 
+var TASK_RUNNER_CMD = 'node_modules/gulp/bin/gulp.js';
+
 describe('controllers', function() {
   var scatter, app, server, db;
   before(function(done) {
@@ -12,9 +14,9 @@ describe('controllers', function() {
     //we clear tmp dir first
     rimraf.sync('tmp');
 
-    spawned('node_modules/grunt-cli/bin/grunt', ['--stack', 'build', '--configDir=test/config'])
+    spawned(TASK_RUNNER_CMD, ['build', '--configDir=test/config'])
       .then(function() {
-        return spawned('node_modules/grunt-cli/bin/grunt', ['--stack', 'install'])
+        return spawned(TASK_RUNNER_CMD, ['install', '--configDir=test/config'])
       })
       .otherwise(function(execErr) {
         console.error(execErr.combined);
@@ -22,7 +24,7 @@ describe('controllers', function() {
       })
       .then(function() {
         particles = new Particles({config: {
-          configDir: "${appRoot}/test/config"
+          configDir: "test/config"
         }});
         return particles.run();
       })
@@ -53,6 +55,9 @@ describe('controllers', function() {
         .expect('Content-Type', /html/)
         .expect(/Hadron/)
         .end(function(err, res){
+          if(err) {
+            console.log(res.text);
+          }
           done(err);
         });
     });

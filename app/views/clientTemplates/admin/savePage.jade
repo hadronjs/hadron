@@ -1,0 +1,31 @@
+form(role="form", name="savePageForm", novalidate)
+  .form-group(ng-class="{'has-error': hasError('savePageForm.title')}")
+    label.control-label(for="title") Title
+    input.form-control(name="title", ng-model="page.title", placeholder="Enter the page title", required)
+    span.control-label(ng-show="hasError('savePageForm.title.required')") Required!
+  
+  .form-group(ng-class="{'has-error': hasError('savePageForm.friendlyUrl')}")
+    label.control-label(for="friendlyUrl") Friendly Url
+    input.form-control(name="friendlyUrl", ng-model="page.friendlyUrl", placeholder="", required)
+    span.control-label(ng-show="hasError('savePageForm.friendlyUrl.required')") Required!
+
+  .form-group
+    label.control-label(for="title") Published
+      i.form-help.fa.fa-info-circle(tooltip="When published the page will show on the blog main page and any user will be able to see the page, otherwise only admin will be able to access the page")
+    toggle-switch-light(ng-model="page.isPublished", text-on="Yes", text-off="No")
+
+  .form-group
+    label.control-label(for="createDate") Created date
+    .input-group
+      span.input-group-addon.btn(ng-click="openDatePicker()")
+        i.glyphicon.glyphicon-calendar
+      input.form-control(type="text", title="createDate", datepicker-popup="fullDate", ng-model="page.createdDate", is-open="datePickerOpened")
+
+  .form-group
+    label.control-label(for="content") Content
+      i.form-help.fa.fa-info-circle(tooltip="Use markdown to format your page content")
+    textarea.textarea-lg.form-control(name="content", ng-model="page.content", placeholder="Enter the page content")
+  
+  .actions
+    button.btn.btn-primary(type="button", ng-click="save(page, savePageForm.$invalid)") Save
+    a.btn.btn-default(type="button", ng-href="/pages/{{page.id}}", target="_blank", ng-disabled="!page.id") Preview

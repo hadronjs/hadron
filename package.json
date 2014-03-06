@@ -40,31 +40,26 @@
   "devDependencies": {
     "mocha": "~1.16.2",
     "chai": "~1.8.1",
-    "grunt-cli": "~0.1.11",
-    "grunt": "~0.4.1",
     "rimraf": "~2.2.2",
     "supertest": "~0.8.1",
     "spawned": "~0.1.0",
-    "hadron-grunt-helper": "~0.2.0",
-    "particles": "~0.2.0",
-    "particles-express": "~0.2.0",
-    "grunt-particles-assetmanager": "~0.2.0",
-    "grunt-particles": "~0.2.0",
-    "particles-bootstrap": "~0.2.0",
-    "particles-angular": "~0.2.0",
-    "particles-jquery": "~0.2.0",
-    "particles-passport": "~0.2.0"
+    "particles": "~0.3.0",
+    "particles-express": "~0.3.0",
+    "particles-bootstrap": "~0.3.0",
+    "particles-angular": "~0.3.0",
+    "particles-jquery": "~0.3.0",
+    "particles-passport": "~0.3.0",
+    "particles-assetmanager": "~0.1.0"
   },
   "peerDependencies": {
-    "particles": "~0.2.0",
-    "particles-express": "~0.2.0",
-    "grunt-particles-assetmanager": "~0.2.0",
-    "grunt-particles": "~0.2.0",
-    "particles-bootstrap": "~0.2.0",
-    "particles-angular": "~0.2.0",
-    "particles-jquery": "~0.2.0",
-    "particles-passport": "~0.2.0",
-    "particles-assetmanager-angular-extender": "~0.2.0"
+    "particles": "~0.3.0",
+    "particles-express": "~0.3.0",
+    "particles-bootstrap": "~0.3.0",
+    "particles-angular": "~0.3.0",
+    "particles-jquery": "~0.3.0",
+    "particles-passport": "~0.3.0",
+    "particles-assetmanager-angular-extender": "~0.3.0",
+    "particles-assetmanager": "~0.1.0"
   },
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha test/server/*.js -t 6000 --reporter spec"

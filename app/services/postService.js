@@ -19,13 +19,13 @@ delega.delegateToProperty(PostsService, 'postRepository', [
 ]);
 
 
-PostsService.prototype.ensureModel = function(data) {
-  if(data instanceof this.Post) {
-    return data;
-  }
-
-  return new this.Post(data);
-};
+//PostsService.prototype.ensureModel = function(data) {
+//  if(data instanceof this.Post) {
+//    return data;
+//  }
+//
+//  return new this.Post(data);
+//};
 
 
 PostsService.prototype.save = function(post) {

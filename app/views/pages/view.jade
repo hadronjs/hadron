@@ -1,0 +1,18 @@
+extends ../_layout
+
+block head
+  title #{page.title} - #{settings.website.title}
+
+block main
+  article
+    h1
+      a(href="/#{page.friendlyUrl}")= page.title
+    .subheading
+    
+    .article-content!= page.getRenderedContent()
+  //INJECT:viewContributions:page-view-article-footer
+  //END INJECT
+
+block footer
+  //INJECT:viewContributions:page-view-footer
+  //END INJECT

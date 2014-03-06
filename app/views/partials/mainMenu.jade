@@ -1,0 +1,8 @@
+include ../mixins/menuItem
+
+ul.sidebar-nav
+  each item in settings.menu
+    +menuItem(item.link, item.iconClass, item.label)
+  if auth.user
+    +menuItem('/admin', 'glyphicon glyphicon-cog', 'Admin')
+    +menuItem('/auth/logout', 'glyphicon glyphicon-log-out', 'Logout')

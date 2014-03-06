@@ -4,11 +4,11 @@ head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   block head
 
-  // INJECT-CSS-START[default]
-  // INJECT-CSS-END[default]
-
-  // INJECT-SCRIPTS-START[default]
-  // INJECT-SCRIPTS-END[default]
+  //INJECT:styles:default
+  //END INJECT
+  
+  //INJECT:scripts:default
+  //END INJECT
 body
   #wrapper
     #sidebar-wrapper.sidebar-wrapper
@@ -19,20 +19,7 @@ body
         .sidebar-brand-title
           a(href="/")= settings.website.title
         .sidebar-brand-headline!= settings.website.headline
-      ul.sidebar-nav
-        li
-          a(href="/")
-            span.glyphicon.glyphicon-home
-            | Blog
-        if auth.user
-          li
-            a(href="/admin")
-              span.glyphicon.glyphicon-cog
-              | Admin
-          li
-            a(href="/auth/logout")
-              span.glyphicon.glyphicon-log-out
-              | Logout
+      include partials/mainMenu
       .sidebar-social
         if settings.social.twitter.username
           div(style="text-align: center")
@@ -57,9 +44,9 @@ body
         block main
   
   block footer
-  
-  // VIEW-CONTRIBUTION-START[main-layout-body-footer]
-  // VIEW-CONTRIBUTION-END[main-layout-body-footer]
+
+  //INJECT:viewContributions:main-layout-body-footer
+  //END INJECT
   
   script.
     $("#menu-toggle").click(function(e) {

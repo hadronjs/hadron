@@ -63,7 +63,18 @@ var Settings = minimodel.Model.extend({
     facebook: {
       showShareButton: Boolean
     }
-  }
+  },
+  menu: [{
+    label: {
+      type: String,
+      required: true
+    },
+    link: {
+      type: String,
+      required: true
+    },
+    iconClass: String
+  }]
 });
 
 Settings.prototype.verifyPassword = function(pwd) {

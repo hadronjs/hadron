@@ -3,15 +3,15 @@
 var self = module.exports = {
   __module: {
     provides: {
-      "assetManager/use_scripts": {},
-      "assetManager/use_stylesheets": {},
-      "assetManager/register_assets_dir": {},
-      "assetManager/register_views_dir": {after: ['./particles-express']},
-      "assetManager/declare_angular_scripts": {}
+      "resources/use_scripts": {},
+      "resources/use_stylesheets": {},
+      "resources/register_assets_dir": {},
+      "resources/register_views_dir": {after: ['./particles-express']},
+      "resources/declare_angular_scripts": {}
     },
     properties: {
-      jquery: 'assetManager/jquery',
-      angular: 'assetManager/angular'
+      jquery: 'resources/jquery',
+      angular: 'resources/angular'
     }
   },
   
@@ -37,9 +37,11 @@ var self = module.exports = {
         "lib/slugg.js",
 
         self.angular.exports.scripts.all,
+        "lib/angular-xeditable/js/xeditable.js",
         "lib/angular-ui/angular-ui-router.js",
         "lib/angular-ui/ui-bootstrap-tpls.js",
         "lib/angular-ui/ui-validate.js",
+        "lib/ngProgress/ngProgress.js",
         {cwd: __dirname + "/../assets", file: "js/**/*.js"}
       ],
       default: [
@@ -52,7 +54,9 @@ var self = module.exports = {
     return {
       admin: [
         "lib/toggle-switch.css",
-        "lib/toastr/toastr.css"
+        "lib/toastr/toastr.css",
+        "lib/angular-xeditable/css/xeditable.css",
+        "lib/ngProgress/ngProgress.css"
       ]
     };
   }

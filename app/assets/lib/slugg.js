@@ -109,4 +109,4 @@
     root.slugg = slugg
   }
 
-}(this))
+}(this));

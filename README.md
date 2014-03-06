@@ -16,7 +16,7 @@ The core is built reusing well-known and (mostly) loved javascript solutions  (E
 * Uses **LevelDB** by default to store the data. No database servers to install or maintain.
 * Static public frontend built with **jade**
 * Admin interface built with **Angular.js**
-* **Grunt**-based asset management, with dynamically generated configuration (using [`grunt-particles-assetmanager`](https://github.com/particles/grunt-particles-assetmanager))
+* **Gulp**-based asset management, with dynamically generated configuration (using [`particles-assetmanager`](https://github.com/particles/particles-assetmanager))
 * Supports **markdown** for posts
 * Integrations with social networks built into the core
 * Plugins for **Google Analytics** and **Disqus**

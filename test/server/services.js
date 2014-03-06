@@ -7,7 +7,8 @@ describe('services', function() {
   var particles;
   beforeEach(function() {
     particles = new Particles({config: {
-      dataDir: "${appRoot}/tmp",
+      dataDir: "${appRoot}/tmp2",
+      configDir: "${appRoot}/test/config",
       "containers": {
         "default": {
           particles: ["${appRoot}/app"]

@@ -8,15 +8,15 @@ html(ng-app="hadronAdmin")
     meta(name='description', content='')
     meta(name='author', content='')
     title(ng-bind="$state.current.title + ' - Hadron Admin'")
+
+    //INJECT:styles:default
+    //END INJECT
+
+    //INJECT:styles:admin
+    //END INJECT
     
-    // INJECT-CSS-START[default]
-    // INJECT-CSS-END[default]
-
-    // INJECT-CSS-START[admin]
-    // INJECT-CSS-END[admin]
-
-    // INJECT-SCRIPTS-START[admin]
-    // INJECT-SCRIPTS-END[admin]
+    //INJECT:scripts:admin
+    //END INJECT
   body
     nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation', ng-controller="NavbarCtrl")
       .container
@@ -31,10 +31,10 @@ html(ng-app="hadronAdmin")
             | Hadron
         .navbar-collapse(collapse="isCollapsed()", style="height: 1px")
           ul.nav.navbar-nav
-            +menuItem('#/posts/list', 'glyphicon glyphicon-list', 'Posts')
-            +menuItem('#/posts/create', 'fa fa-plus', 'Create post')
-            // VIEW-CONTRIBUTION-START[admin-tpl-menuItems]
-            // VIEW-CONTRIBUTION-END[admin-tpl-menuItems]
+            +menuItem('#/posts/list', 'fa fa-list-alt', 'Posts')
+            +menuItem('#/pages/list', 'fa fa-files-o', 'Pages')
+            //INJECT:viewContributions:admin-tpl-menuItems
+            //END INJECT
             li.dropdown
               a.dropdown-toggle(href="#", data-toggle="dropdown")
                 span(class="glyphicon glyphicon-wrench")
@@ -42,10 +42,11 @@ html(ng-app="hadronAdmin")
                 b.caret
               ul.dropdown-menu
                 +menuItem('#/settings/website', 'fa fa-globe', 'Website')
+                +menuItem('#/settings/menu', 'fa fa-list-ul', 'Menu')
                 +menuItem('#/settings/social', 'fa fa-comment', 'Social')
                 +menuItem('#/settings/admin', 'fa fa-user', 'Admin')
-                // VIEW-CONTRIBUTION-START[admin-tpl-settingsMenuItems]
-                // VIEW-CONTRIBUTION-END[admin-tpl-settingsMenuItems]
+                //INJECT:viewContributions:admin-tpl-settingsMenuItems
+                //END INJECT
             +menuItem('/auth/logout', 'glyphicon glyphicon-log-out', 'Logout')
     .container
       .row

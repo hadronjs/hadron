@@ -1,10 +1,10 @@
 doctype html
 .page-admin-savesettings
   .panel.panel-default
-    .panel-heading Posts
-      a.btn.btn-primary.btn-xs(href="#/posts/create").pull-right.fa.fa-plus
+    .panel-heading Pages
+      a.btn.btn-primary.btn-xs(href="#/pages/create").pull-right.fa.fa-plus
     .panel-body
-      table.table.table-hover.post-list
+      table.table.table-hover.page-list
         thead
           tr 
             th Title
@@ -12,15 +12,15 @@ doctype html
             th 
             th
         tbody
-          tr(ng-repeat="post in posts")
+          tr(ng-repeat="page in pages")
             td
-              a(ng-href="{{post.friendlyUrl}}") {{post.title}}
-            td {{post.createdDate|date:'fullDate'}}
-            td(ng-switch="post.isPublished")
+              a(ng-href="{{page.friendlyUrl}}") {{page.title}}
+            td {{page.createdDate|date:'fullDate'}}
+            td(ng-switch="page.isPublished")
               span.fa.fa-cloud(ng-switch-when="true", tooltip="Published")
               span.fa.fa-archive(ng-switch-default, tooltip="Unpublished")
             td.actions
-              a.btn.btn-info.btn(href="#/posts/edit/{{post.id}}", title="Edit")
+              a.btn.btn-info.btn(href="#/pages/edit/{{page.id}}", title="Edit")
                 span.glyphicon.glyphicon-pencil
               a.btn.btn-warning.btn(type="button", confirmed-click="delete($index)", title="Delete")
                 span.fa.fa-trash-o

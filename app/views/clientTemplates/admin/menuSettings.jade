@@ -1,0 +1,41 @@
+doctype html
+.page-admin-savesettings
+  .panel.panel-default
+    .panel-heading Menu
+      button.btn.btn-primary.btn-xs(href="#", ng-click="newItem()").pull-right.fa.fa-plus 
+    .panel-body
+      table.table.table-hover
+        thead
+          tr 
+            th Icon
+            th Label
+            th Link
+            th
+        tbody
+          tr(ng-repeat="item in settings.menu")
+            td
+              span(editable-text="item.iconClass", e-name="link", e-form="menuform")
+                span(class="{{item.iconClass}}")
+            td
+              span(editable-text="item.label", e-name="label", e-form="menuform")
+                | {{item.label}}
+            td
+              span(editable-text="item.link", e-name="link", e-form="menuform")
+                | {{item.link}}
+            td.actions
+              form(editable-form, name="menuform", ng-show="menuform.$visible", class="form-buttons form-inline", shown="inserted == item")
+                button.btn.btn-info.btn-sm.fa.fa-check(type="submit",title="Save")
+                button.btn.btn-default.btn-sm.fa.fa-share(type="button",ng-click="menuform.$cancel()",title="Cancel")
+              
+              .buttons(ng-show="!menuform.$visible")
+                button.btn.btn-primary.btn-sm(ng-click="menuform.$show()", title="Edit")
+                  span.glyphicon.glyphicon-pencil
+                button.btn.btn-default.btn-sm(type="button", ng-click="moveUp($index)", title="Move up")
+                  span.fa.fa-chevron-up
+                button.btn.btn-default.btn-sm(type="button", ng-click="moveDown($index)", title="Move down")
+                  span.fa.fa-chevron-down
+                button.btn.btn-warning.btn-sm(type="button", ng-click="remove($index)", title="Delete")
+                  span.glyphicon.glyphicon-remove-circle
+                
+      div.actions
+          a.btn.btn-primary(type="button", ng-click="save(settings)") Save

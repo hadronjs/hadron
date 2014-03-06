@@ -112,6 +112,26 @@ AbstractRepository.prototype.save = function(entity, options) {
   });
 };
 
+
+AbstractRepository.prototype.findAll = function(options) {
+  var self = this;
+  var deferred = AbstractRepository.promises.defer();
+  this.db.createValueStream(options).pipe(endpoint({objectMode: true}, function(err, all) {
+    if(err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(all);
+    }
+  })).on('error', function(err) {
+    deferred.reject(err);
+  });
+  
+  return deferred.promise.then(function(ntts) {
+    return self.afterRetrieveList(ntts);
+  });
+};
+
+
 AbstractRepository.prototype.findBy = function(properties, options) {
   var self = this;
   if(_.isArray(properties)) {

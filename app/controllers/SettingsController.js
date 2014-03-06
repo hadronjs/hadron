@@ -13,7 +13,7 @@ var self = module.exports = {
   apiRetrieve: function(req, res, next) {
     self._settingsService.retrieveSettings().then(function(settings) {
       res.send(settings.toJson());
-    }).otherwise(next); 
+    }).otherwise(next);
   },
  
   apiSave: function(req, res, next) {
