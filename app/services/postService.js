@@ -14,6 +14,7 @@ function PostsService(Post, postRepository, friendlyUrlRepository) {
 delega.delegateToProperty(PostsService, 'postRepository', [
   'retrieve',
   'findAllOrderByDate',
+  'findAll',
   'findAllPublishedOrderByDate',
   'retrieveByFriendlyUrl'
 ]);

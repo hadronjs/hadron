@@ -2,13 +2,13 @@
 [![Build Status](https://travis-ci.org/hadronjs/hadron.png)](https://travis-ci.org/hadronjs/hadron)
 [![Dependency Status](https://gemnasium.com/hadronjs/hadron.png)](https://gemnasium.com/hadronjs/hadron)
 
-# Synopsis
+# Hadron
 
 *Hadron* is a **minimalist, extensible publishing/blogging platform** written in Node.js, best enjoyed by a Node.js developer :).
 
 Hadron gives you the foundation to build **your very own** blog, thanks to its composable architecture.
 
-The core is built reusing well-known and (mostly) loved javascript solutions  (Express, Grunt, LevelDB, Angular, etc.) with a sprinkle of [Scatter](https://github.com/mariocasciaro/scatter) IoC to give **composability** from the ground up.
+The core is built reusing well-known and (mostly) loved javascript solutions  (Express, Gulp, LevelDB, AngularJS, etc.) with a sprinkle of [Scatter](https://github.com/mariocasciaro/scatter) IoC to give **composability** from the ground up.
 
 #### Tech Features
 
@@ -30,9 +30,9 @@ Hadron is currently in **experimental** stage, things may change rapidly and alt
 That said, early adopters/testers are more than welcome :).
 # Screenshots
 
-![Hadron homepage](https://raw.github.com/hadronjs/hadron/master/img/screenshot1.jpg)
+![Hadron homepage](https://raw.github.com/hadronjs/resources/master/hadron_screenshot1.jpeg)
 
-![Hadron admin](https://raw.github.com/hadronjs/hadron/master/img/screenshot2.jpg)
+![Hadron admin](https://raw.github.com/hadronjs/resources/master/hadron_screenshot2.jpeg)
 
 # Quick install
 
@@ -53,8 +53,8 @@ $ git pull -s recursive -X theirs hadron-seed master
 * Install the dependencies, build and install the application
 ```
 $ npm install
-$ grunt install
-$ grunt build
+$ gulp install
+$ gulp build
 ```
 
 * [Optional] Commit the changes to your new repo
@@ -85,6 +85,10 @@ $ npm install --production
 $ npm rebuild
 ```
 on the target system, to rebuild binary modules before the app starts.
+* Build the app in production mode, so all the assets are concatenated and minified
+```
+$ gulp build --isProd
+```
 * Start the app in production mode, you'll get a big performance improvement
 ```
 $ NODE_ENV=production node app.js
@@ -96,12 +100,13 @@ You can easily deploy your Hadron blog to OpenShift and having it running on the
 
 # Update
 
-* Remove old dependencies
+* Backup everything, in particular the data directory and any custom plugin/theme
+* Remove the old dependencies
 ```
 $ rm -rf node_modules
 ```
 
-* Pull the latest `hadron-seed` code (this will update versions in `package.json` and default config if needed).
+* Pull the latest `hadron-seed` code (this will update the versions in `package.json` and default config if needed).
 ```
 $ git pull -s recursive hadron-seed master
 ```
@@ -111,14 +116,25 @@ $ git pull -s recursive hadron-seed master
 $ git mergetool
 ```
 
+* (Optional) If you are using hadron-openshift you should update it too
+```
+$ git pull -s recursive hadron-openshif master
+$ git mergetool
+```
+t
 * Install and build as usual
 ```
 $ npm install
-$ grunt install
-$ grunt build
+$ gulp install
+$ gulp build
 ```
 
 # Plugin & Theme Development
+
+Use this command to start Hadron in development mode, so it restarts and rebuilds automatically when an asset or server side code changes:
+```
+$ gulp develop
+```
 
 Please refer to the wiki: 
 
@@ -149,7 +165,3 @@ please let us know with a tweet mentioning [@hadronjs](https://twitter.com/hadro
 
 Also there is a Google group you can use to ask questions and discuss about Hadron. 
 Visit the [Hadron Google group](http://groups.google.com/d/forum/hadronjs).
-
----
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/hadronjs/hadron/trend.png)](https://bitdeli.com/free "Bitdeli Badge")

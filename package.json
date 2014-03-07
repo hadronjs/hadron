@@ -21,10 +21,10 @@
   ],
   "dependencies": {
     "lodash": "~2.4.1",
-    "marked": "~0.2.9",
+    "marked": "~0.3.1",
     "underscore.string": "~2.3.3",
     "object-path": "~0.1.1",
-    "highlight.js": "~7.5.0",
+    "highlight.js": "~8.0.0",
     "mkdirp": "~0.3.5",
     "connect-leveldb": "~0.1.4",
     "through": "~2.3.4",
@@ -38,10 +38,10 @@
     "delega": "~0.1.0"
   },
   "devDependencies": {
-    "mocha": "~1.16.2",
-    "chai": "~1.8.1",
+    "mocha": "~1.17.1",
+    "chai": "~1.9.0",
     "rimraf": "~2.2.2",
-    "supertest": "~0.8.1",
+    "supertest": "~0.9.0",
     "spawned": "~0.1.0",
     "particles": "~0.3.0",
     "particles-express": "~0.3.0",
