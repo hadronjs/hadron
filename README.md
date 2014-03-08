@@ -27,7 +27,7 @@ The core is built reusing well-known and (mostly) loved javascript solutions  (E
 
 Hadron is currently in **experimental** stage, things may change rapidly and although reasonable efforts will be made to not break compatibility, no easy migration might be provided between releases at this very early stage.
 
-That said, early adopters/testers are more than welcome :).
+That said, we will try to keep everybody happy, so early adopters/testers are more than welcome :).
 # Screenshots
 
 ![Hadron homepage](https://raw.github.com/hadronjs/resources/master/hadron_screenshot1.jpeg)
@@ -121,7 +121,7 @@ $ git mergetool
 $ git pull -s recursive hadron-openshif master
 $ git mergetool
 ```
-t
+
 * Install and build as usual
 ```
 $ npm install
@@ -139,6 +139,22 @@ $ gulp develop
 Please refer to the wiki: 
 
 #### [Plugin & Theme Development](https://github.com/hadronjs/hadron/wiki/Develop)
+
+-----
+# Changelog
+
+### 0.3.0
+
+* Static pages
+* Editable menu
+* Asset manager refactored to use gulp
+* Minification and concatenation of the assets in production
+* Sligtly improved admin UI
+* **Breaking changes**: 
+    * Asset definitions must be moved from the `assetManager` to `resources` namespace.
+    * To build and install Hadron `gulp` should be used in place of `grunt`
+    * In the configuration the `assetManager` property is now `resources`
+    * View injection tags changed to use the format `//INJECT:<type>:<namespace>`
 
 -----
 
