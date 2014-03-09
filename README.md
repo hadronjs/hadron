@@ -1,8 +1,14 @@
+<p align="center">
+<img src="https://raw.github.com/hadronjs/resources/master/hadron_full.png"/>
+</p>
+
+
+----
 [![NPM version](https://badge.fury.io/js/hadron.png)](http://badge.fury.io/js/hadron)
 [![Build Status](https://travis-ci.org/hadronjs/hadron.png)](https://travis-ci.org/hadronjs/hadron)
 [![Dependency Status](https://gemnasium.com/hadronjs/hadron.png)](https://gemnasium.com/hadronjs/hadron)
 
-# Hadron
+----
 
 *Hadron* is a **minimalist, extensible publishing/blogging platform** written in Node.js, best enjoyed by a Node.js developer :).
 
