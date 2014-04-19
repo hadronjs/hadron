@@ -34,12 +34,12 @@ block main
     
     .lead= post.lead
     .article-content!= post.getRenderedContent()
-  // VIEW-CONTRIBUTION-START[post-view-article-footer]
-  // VIEW-CONTRIBUTION-END[post-view-article-footer]
+  //INJECT:viewContributions:post-view-article-footer
+  //END INJECT
 
 block footer
-  // VIEW-CONTRIBUTION-START[post-view-footer]
-  // VIEW-CONTRIBUTION-END[post-view-footer]
+  //INJECT:viewContributions:post-view-footer
+  //END INJECT
   if(settings.social.twitter.showShareButton)
     script.
       //Twitter share button
