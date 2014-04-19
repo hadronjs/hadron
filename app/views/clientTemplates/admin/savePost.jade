@@ -3,6 +3,10 @@ form(role="form", name="savePostForm", novalidate)
     label.control-label(for="title") Title
     input.form-control(name="title", ng-model="post.title", placeholder="Enter the post title", required)
     span.control-label(ng-show="hasError('savePostForm.title.required')") Required!
+
+  .form-group(ng-class="{'has-error': hasError('savePostForm.headlineImage')}")
+      label.control-label(for="headlineImage") Headline Image
+      input.form-control(name="headlineImage", ng-model="post.headlineImage", placeholder="Enter URL for headline image")
   
   .form-group(ng-class="{'has-error': hasError('savePostForm.friendlyUrl')}")
     label.control-label(for="friendlyUrl") Friendly Url

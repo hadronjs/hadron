@@ -8,7 +8,10 @@ block main
   .article-list
     each post in posts
       article
-        h2
+        if post.headlineImage
+          h2
+            img.headline-image(src="#{post.headlineImage}")= post.headlineImage
+        h2 
           a(href="/#{post.friendlyUrl}")= post.title
         .summary= post.lead
         div.subheading

@@ -6,6 +6,9 @@ block head
 
 block main
   article
+    if post.headlineImage
+      h1
+        img.headline-image(src="#{post.headlineImage}")= post.headlineImage
     h1
       a(href="/#{post.friendlyUrl}")= post.title
     .subheading
@@ -31,12 +34,12 @@ block main
     
     .lead= post.lead
     .article-content!= post.getRenderedContent()
-  //INJECT:viewContributions:post-view-article-footer
-  //END INJECT
+  // VIEW-CONTRIBUTION-START[post-view-article-footer]
+  // VIEW-CONTRIBUTION-END[post-view-article-footer]
 
 block footer
-  //INJECT:viewContributions:post-view-footer
-  //END INJECT
+  // VIEW-CONTRIBUTION-START[post-view-footer]
+  // VIEW-CONTRIBUTION-END[post-view-footer]
   if(settings.social.twitter.showShareButton)
     script.
       //Twitter share button
