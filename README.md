@@ -178,7 +178,7 @@ Hadron itself is an npm packaged Scatter module (a particle), and is installed a
 ## Credits
 
 * Creator/Maintainer: [Mario Casciaro](https://github.com/mariocasciaro) - Twitter [@mariocasciaro](https://twitter.com/mariocasciaro)
-* your name here
+* Contributor: [Jason Marah](https://github.com/jasonmarah) - Twitter [@jasonmarah](https://twitter.com/jasonmarah)
 
 ## Feedback & Social
 
