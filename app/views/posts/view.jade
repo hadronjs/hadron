@@ -6,6 +6,9 @@ block head
 
 block main
   article
+    if post.headlineImage
+      h1
+        img.headline-image(src="#{post.headlineImage}")= post.headlineImage
     h1
       a(href="/#{post.friendlyUrl}")= post.title
     .subheading

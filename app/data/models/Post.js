@@ -38,7 +38,8 @@ var Post = minimodel.Model.extend({
     default: 'markdown'
   },
   lead: String,
-  friendlyUrl: String
+  friendlyUrl: String,
+  headlineImage: String
 });
 
 Post.prototype.getRenderedContent = function() {
