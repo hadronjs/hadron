@@ -1,5 +1,6 @@
-var crypto = require('crypto'),
-  minimodel = require('minimodel');
+var crypto = require('crypto');
+var minimodel = require('minimodel');
+var bcrypt = require('bcrypt');
 
 var Settings = minimodel.Model.extend({ 
   id: {
@@ -31,9 +32,16 @@ var Settings = minimodel.Model.extend({
       type: minimodel.Types.Virtual,
       set: function(val) {
         if(val) {
-          this.model.setRaw("adminUser.hashed_password", crypto.createHash('sha512').update(val).digest('hex'));
+          var hash = bcrypt.hashSync(val, 10);
+          this.model.setRaw("adminUser.hashed_password", hash);
+          this.model.adminUser.password_type = 'bcrypt';
         }
       }
+    },
+    password_type: {
+      type: String,
+      includeInJson: false,
+      includeInObject: false
     }
   },
   website: {
@@ -78,7 +86,11 @@ var Settings = minimodel.Model.extend({
 });
 
 Settings.prototype.verifyPassword = function(pwd) {
-  return crypto.createHash('sha512').update(pwd).digest('hex') === this.adminUser.hashed_password;
+  if(this.adminUser.password_type === 'bcrypt') {
+    return bcrypt.compareSync(pwd, this.adminUser.hashed_password);
+  } else {
+    return crypto.createHash('sha512').update(pwd).digest('hex') === this.adminUser.hashed_password;
+  }
 };
 
 module.exports = Settings;

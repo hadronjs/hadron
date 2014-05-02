@@ -10,7 +10,7 @@
 
 ----
 
-*Hadron* is a **minimalist, extensible publishing/blogging platform** written in Node.js, best enjoyed by a Node.js developer :).
+*Hadron* is a **minimalist, hackable publishing/blogging platform** written in Node.js, best enjoyed by a Node.js developer :).
 
 Hadron gives you the foundation to build **your very own** blog, thanks to its composable architecture.
 
