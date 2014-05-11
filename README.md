@@ -7,6 +7,7 @@
 [![NPM version](https://badge.fury.io/js/hadron.png)](http://badge.fury.io/js/hadron)
 [![Build Status](https://travis-ci.org/hadronjs/hadron.png)](https://travis-ci.org/hadronjs/hadron)
 [![Dependency Status](https://gemnasium.com/hadronjs/hadron.png)](https://gemnasium.com/hadronjs/hadron)
+[![Gitter chat](https://badges.gitter.im/hadronjs/hadron.png)](https://gitter.im/hadronjs/hadron)
 
 ----
 
